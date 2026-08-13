@@ -64,7 +64,7 @@ export default function Footer({ lang }: FooterProps) {
               {[
                 { icon: <Camera size={18} />, label: "Instagram", href: "#" },
                 { icon: <Globe size={18} />, label: "LinkedIn", href: "#" },
-                { icon: <Mail size={18} />, label: "Email", href: "mailto:derya@example.com" },
+                { icon: <Mail size={18} />, label: "Email", href: "mailto:mdmderya777@gmail.com" },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -109,7 +109,7 @@ export default function Footer({ lang }: FooterProps) {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
                 { label: "WhatsApp", href: "https://wa.me/905428084522" },
-                { label: "derya@example.com", href: "mailto:derya@example.com" },
+                { label: "mdmderya777@gmail.com", href: "mailto:mdmderya777@gmail.com" },
                 { label: "İzmir, Türkiye", href: "#" },
               ].map((item) => (
                 <a
