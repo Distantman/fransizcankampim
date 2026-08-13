@@ -17,7 +17,7 @@ export default function Pricing({ lang }: PricingProps) {
   const scrollTo = (id: string) =>
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
-  const tiers = [t.tier1, t.tier2, t.tier3];
+  const tiers = [t.tier1, t.tier2, t.tier3, t.tier4];
 
   const tierStyles = [
     {
@@ -31,6 +31,12 @@ export default function Pricing({ lang }: PricingProps) {
       border: "1px solid rgba(201,169,110,0.3)",
       shadow: "0 24px 60px rgba(26,26,46,0.25)",
       popular: true,
+    },
+    {
+      background: "var(--color-white)",
+      border: "1px solid var(--color-grey-200)",
+      shadow: "0 8px 30px rgba(0,0,0,0.06)",
+      popular: false,
     },
     {
       background: "var(--color-white)",
@@ -84,7 +90,7 @@ export default function Pricing({ lang }: PricingProps) {
         {/* Tier cards */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(4, 1fr)",
           gap: "24px",
           alignItems: "start",
         }} className="pricing-grid">
@@ -101,7 +107,7 @@ export default function Pricing({ lang }: PricingProps) {
                 animate={{
                   opacity: inView ? 1 : 0,
                   y: inView ? 0 : 40,
-                  transition: { delay: i * 0.15, duration: 0.7, ease: "easeOut" as any },
+                  transition: { delay: i * 0.1, duration: 0.7, ease: "easeOut" as any },
                 }}
                 style={{
                   background: style.background,
@@ -222,13 +228,19 @@ export default function Pricing({ lang }: PricingProps) {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
+          .pricing-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            max-width: 900px;
+            margin: 0 auto;
+          }
+        }
+        @media (max-width: 768px) {
           .pricing-grid {
             grid-template-columns: 1fr !important;
             max-width: 440px;
-            margin: 0 auto;
           }
-          .pricing-grid > *:nth-child(2) {
+          .pricing-grid > * {
             transform: scale(1) !important;
           }
         }
