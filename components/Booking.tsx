@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Shield, Lock, CreditCard } from "lucide-react";
+import { MessageSquare, Mail } from "lucide-react";
 import { Lang, translations } from "@/lib/i18n";
 
 interface BookingProps {
@@ -81,126 +81,122 @@ export default function Booking({ lang }: BookingProps) {
           </p>
         </motion.div>
 
-        {/* Form placeholder card */}
+        {/* Live contact card */}
         <motion.div
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 40, transition: { delay: 0.2, duration: 0.8 } }}
-          style={{ maxWidth: "760px", margin: "0 auto" }}
+          style={{ maxWidth: "600px", margin: "0 auto" }}
         >
           <div style={{
             background: "rgba(255,255,255,0.04)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "var(--radius-xl)",
-            overflow: "hidden",
+            padding: "48px 32px",
             boxShadow: "0 32px 80px rgba(0,0,0,0.4)",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "36px",
           }}>
-            {/* Mock form toolbar */}
-            <div style={{
-              background: "rgba(255,255,255,0.07)",
-              borderBottom: "1px solid rgba(255,255,255,0.08)",
-              padding: "16px 24px",
-              display: "flex", alignItems: "center", gap: "8px",
-            }}>
-              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "rgba(255,80,80,0.7)" }} />
-              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "rgba(255,200,0,0.7)" }} />
-              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "rgba(80,200,80,0.7)" }} />
-              <div style={{ flex: 1, height: "28px", borderRadius: "var(--radius-sm)", background: "rgba(255,255,255,0.06)", marginLeft: "8px", display: "flex", alignItems: "center", padding: "0 12px" }}>
-                <span style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.3)", fontFamily: "monospace" }}>
-                  https://form.jotform.com/derya-uygun
-                </span>
+            {/* Icons header */}
+            <div style={{ display: "flex", gap: "16px" }}>
+              <div style={{
+                width: "60px", height: "60px",
+                background: "rgba(37, 211, 102, 0.15)",
+                border: "1px solid rgba(37, 211, 102, 0.25)",
+                borderRadius: "50%",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#25D366",
+              }}>
+                <MessageSquare size={26} />
               </div>
-              <Lock size={13} color="rgba(255,255,255,0.3)" />
+              <div style={{
+                width: "60px", height: "60px",
+                background: "rgba(201, 169, 110, 0.15)",
+                border: "1px solid rgba(201, 169, 110, 0.25)",
+                borderRadius: "50%",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "var(--color-gold-light)",
+              }}>
+                <Mail size={26} />
+              </div>
             </div>
 
-            {/* Placeholder content */}
+            {/* Description */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <h3 style={{
+                fontFamily: "var(--font-playfair)",
+                fontSize: "1.5rem", fontWeight: 700,
+                color: "var(--color-white)",
+              }}>
+                {lang === "tr" ? "Hemen İletişime Geçin" : lang === "fr" ? "Contactez-moi" : "Get in Touch Directly"}
+              </h3>
+              <p style={{
+                fontSize: "0.95rem", lineHeight: 1.7,
+                color: "rgba(255,255,255,0.6)",
+                maxWidth: "440px",
+                margin: "0 auto",
+              }}>
+                {t.sub}
+              </p>
+            </div>
+
+            {/* Buttons */}
             <div style={{
-              padding: "60px 48px",
-              display: "flex", flexDirection: "column", alignItems: "center",
-              gap: "32px", textAlign: "center",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "14px",
             }}>
-              {/* Icon */}
-              <div style={{
-                width: "80px", height: "80px",
-                background: "linear-gradient(135deg, rgba(201,169,110,0.2), rgba(107,140,186,0.15))",
-                border: "1px solid rgba(201,169,110,0.25)",
-                borderRadius: "var(--radius-lg)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}>
-                <CreditCard size={32} color="var(--color-gold-light)" />
-              </div>
+              <a
+                href="https://wa.me/905428084522"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold"
+                style={{
+                  height: "54px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  borderRadius: "var(--radius-full)",
+                  fontSize: "1rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                <MessageSquare size={18} />
+                {t.ctaWhatsApp}
+              </a>
 
-              <div>
-                <h3 style={{
-                  fontFamily: "var(--font-playfair)",
-                  fontSize: "1.4rem", fontWeight: 700,
-                  color: "var(--color-white)", marginBottom: "12px",
-                }}>
-                  Jotform + iyzico
-                </h3>
-                <p style={{
-                  fontSize: "0.93rem", lineHeight: 1.75,
-                  color: "rgba(255,255,255,0.45)",
-                  maxWidth: "440px",
-                }}>
-                  {t.formPlaceholder}
-                </p>
-              </div>
-
-              {/* Mock form fields */}
-              <div style={{ width: "100%", maxWidth: "480px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                {[
-                  lang === "tr" ? "Ad Soyad" : lang === "fr" ? "Nom Complet" : "Full Name",
-                  lang === "tr" ? "E-posta Adresi" : lang === "fr" ? "Adresse E-mail" : "Email Address",
-                  lang === "tr" ? "Telefon Numarası" : lang === "fr" ? "Numéro de Téléphone" : "Phone Number",
-                  lang === "tr" ? "Tercih Ettiğiniz Ders Paketi" : lang === "fr" ? "Forfait Préféré" : "Preferred Package",
-                ].map((placeholder) => (
-                  <div key={placeholder} style={{
-                    height: "48px",
-                    background: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "var(--radius-sm)",
-                    display: "flex", alignItems: "center", padding: "0 16px",
-                  }}>
-                    <span style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.25)" }}>
-                      {placeholder}
-                    </span>
-                  </div>
-                ))}
-
-                <button
-                  id="booking-submit-btn"
-                  style={{
-                    marginTop: "8px",
-                    height: "52px",
-                    background: "linear-gradient(135deg, var(--color-gold-dark), var(--color-gold))",
-                    border: "none",
-                    borderRadius: "var(--radius-full)",
-                    color: "var(--color-white)",
-                    fontFamily: "var(--font-inter)",
-                    fontWeight: 700, fontSize: "0.95rem",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    letterSpacing: "0.02em",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 12px 30px rgba(160,120,64,0.4)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
-                >
-                  {lang === "tr" ? "Ders Rezervasyonu Yap →" : lang === "fr" ? "Réserver un Cours →" : "Book Your Lesson →"}
-                </button>
-              </div>
-
-              {/* Trust note */}
-              <div style={{
-                display: "flex", alignItems: "center", gap: "8px",
-                padding: "12px 20px",
-                background: "rgba(255,255,255,0.04)",
-                borderRadius: "var(--radius-full)",
-                border: "1px solid rgba(255,255,255,0.08)",
-              }}>
-                <Shield size={14} color="rgba(255,255,255,0.4)" />
-                <span style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.35)" }}>
-                  {t.formNote}
-                </span>
-              </div>
+              <a
+                href="mailto:mdmderya777@gmail.com"
+                className="btn-secondary"
+                style={{
+                  height: "54px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  borderRadius: "var(--radius-full)",
+                  borderColor: "rgba(255,255,255,0.15)",
+                  color: "var(--color-white)",
+                  fontSize: "1rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--color-gold-light)";
+                  e.currentTarget.style.color = "var(--color-gold-light)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                  e.currentTarget.style.color = "var(--color-white)";
+                }}
+              >
+                <Mail size={18} />
+                {t.ctaEmail}
+              </a>
             </div>
           </div>
         </motion.div>

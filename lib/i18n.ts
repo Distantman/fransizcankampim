@@ -115,9 +115,9 @@ export const translations = {
     booking: {
       sectionTag: "Randevu Al",
       headline: "İlk Adımı Atın",
-      sub: "Formu doldurun, size 24 saat içinde dönüş yapıyorum.",
-      formPlaceholder: "Jotform + iyzico güvenli ödeme formu buraya yüklenecektir.",
-      formNote: "Tüm ödemeler iyzico altyapısıyla 256-bit SSL şifrelemesiyle korunmaktadır.",
+      sub: "Ücretsiz tanışma dersi planlamak veya paketler hakkında bilgi almak için bana WhatsApp veya e-posta yoluyla ulaşabilirsiniz.",
+      ctaWhatsApp: "WhatsApp ile İletişime Geç",
+      ctaEmail: "E-posta Gönder",
     },
     footer: {
       tagline: "Fransızcayı yaşayarak öğretin.",
@@ -248,9 +248,9 @@ export const translations = {
     booking: {
       sectionTag: "Prendre Rendez-Vous",
       headline: "Faites le Premier Pas",
-      sub: "Remplissez le formulaire, je vous réponds dans les 24 heures.",
-      formPlaceholder: "Le formulaire de paiement sécurisé Jotform + iyzico sera chargé ici.",
-      formNote: "Tous les paiements sont protégés par un chiffrement SSL 256 bits via iyzico.",
+      sub: "N'hésitez pas à me contacter par WhatsApp ou par e-mail pour planifier un cours d'essai gratuit ou pour en savoir plus.",
+      ctaWhatsApp: "Contactez-moi sur WhatsApp",
+      ctaEmail: "Envoyer un E-mail",
     },
     footer: {
       tagline: "Apprenez le français en le vivant.",
@@ -381,9 +381,9 @@ export const translations = {
     booking: {
       sectionTag: "Book Now",
       headline: "Take the First Step",
-      sub: "Fill out the form and I'll get back to you within 24 hours.",
-      formPlaceholder: "Jotform + iyzico secure native checkout gateway loads here.",
-      formNote: "All payments are protected by 256-bit SSL encryption via iyzico.",
+      sub: "Get in touch via WhatsApp or email to schedule your free introductory consultation or to learn more.",
+      ctaWhatsApp: "Contact on WhatsApp",
+      ctaEmail: "Send an Email",
     },
     footer: {
       tagline: "Learn French by living it.",
