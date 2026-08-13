@@ -44,7 +44,7 @@ export const translations = {
       card2: {
         title: "Sınav Hazırlık",
         sub: "DELF & DALF Odaklı",
-        desc: "DELF A1–B2 ve DALF C1–C2 sınavları için sistematik, strateji odaklı hazırlık. Geçmiş sınav analizleri ve kişiselleştirilmiş değerlendirme raporları dahildir.",
+        desc: "DELF A1–B2 sınavları için sistematik, strateji odaklı hazırlık. Geçmiş sınav analizleri ve kişiselleştirilmiş değerlendirme raporları dahildir.",
         tags: ["DELF", "DALF", "Strateji"],
       },
       card3: {
@@ -168,7 +168,7 @@ export const translations = {
       card2: {
         title: "Préparation aux Examens",
         sub: "DELF & DALF",
-        desc: "Préparation systématique et stratégique pour les examens DELF A1–B2 et DALF C1–C2. Analyses d'examens passés et rapports d'évaluation personnalisés inclus.",
+        desc: "Préparation systématique et stratégique pour les examens DELF A1–B2. Analyses d'examens passés et rapports d'évaluation personnalisés inclus.",
         tags: ["DELF", "DALF", "Stratégie"],
       },
       card3: {
@@ -292,7 +292,7 @@ export const translations = {
       card2: {
         title: "Exam Preparation",
         sub: "DELF & DALF Focused",
-        desc: "Systematic, strategy-focused preparation for DELF A1–B2 and DALF C1–C2 exams. Includes past exam analyses and personalized evaluation reports.",
+        desc: "Systematic, strategy-focused preparation for DELF A1–B2 exams. Includes past exam analyses and personalized evaluation reports.",
         tags: ["DELF", "DALF", "Strategy"],
       },
       card3: {
